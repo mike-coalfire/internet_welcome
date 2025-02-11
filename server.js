@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 const crypto = require('crypto');
-
+const port = process.env.PORT || 8000
 
 const requestTime = function (req, res, next) {
   req.requestTime = Date.now()
@@ -77,6 +77,6 @@ function generateRandomHashes(count) {
 
 
 
-app.listen(8000, () => {
-  console.log('Server started on port 8000');
+app.listen(port, () => {
+  console.log('Server started on port: ', port);
 });
